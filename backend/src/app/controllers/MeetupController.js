@@ -9,7 +9,7 @@ class MeetupController {
   async index(req, res) {
     const meetups = await Meetup.findAll({
       where: {
-        user_id: req.params.user_id,
+        user_id: req.userId,
       },
       order: [['date', 'desc']],
       attributes: ['id', 'name', 'description', 'date', 'location'],
@@ -117,14 +117,14 @@ class MeetupController {
       where: { id: req.params.meetup_id },
     });
 
+    if (!meetup) {
+      return res.status(400).json({ error: 'Meetup not found' });
+    }
+
     if (meetup.user_id !== req.userId) {
       return res
         .status(401)
         .json({ error: "You don't have permission to cancel this meetup" });
-    }
-
-    if (!meetup) {
-      return res.status(400).json({ error: 'Meetup not found' });
     }
 
     const date = subHours(meetup.date, 1);
