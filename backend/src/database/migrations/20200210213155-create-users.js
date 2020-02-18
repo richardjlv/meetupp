@@ -28,11 +28,6 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      provider: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-      },
     });
   },
 
