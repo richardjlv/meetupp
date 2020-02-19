@@ -1,6 +1,9 @@
 import { endOfHour, startOfHour } from 'date-fns';
 import { Op } from 'sequelize';
 
+import Mail from '../../lib/Mail';
+import Queue from '../../lib/Queue';
+import SubscriptionMail from '../jobs/SubscriptionMail';
 import File from '../models/File';
 import Meetup from '../models/Meetup';
 import User from '../models/User';
@@ -32,9 +35,15 @@ class SubscriberController {
   }
 
   async store(req, res) {
-    const { id, subscribers } = await User.findByPk(req.userId);
+    const { id, name, subscribers } = await User.findByPk(req.userId);
 
-    const meetup = await Meetup.findByPk(req.body.meetup_id);
+    const meetup = await Meetup.findByPk(req.body.meetup_id, {
+      include: {
+        model: User,
+        as: 'user',
+        attributes: ['name', 'email'],
+      },
+    });
 
     if (!meetup) {
       return res.status(400).json({ error: 'Meetup not exists' });
@@ -79,6 +88,11 @@ class SubscriberController {
         },
       }
     );
+
+    await Queue.add(SubscriptionMail.key, {
+      meetup,
+      name,
+    });
 
     return res.json({ message: 'You subscribed this Meetup' });
   }
