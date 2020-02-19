@@ -17,14 +17,15 @@ routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
 
+routes.get('/users', UserController.index);
 routes.put('/users', UserController.update);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
+routes.get('/meetups', MeetupController.index);
 routes.post('/meetups', MeetupController.store);
 routes.put('/meetups/:meetup_id', MeetupController.update);
 routes.delete('/meetups/:meetup_id', MeetupController.delete);
-routes.get('/meetups', MeetupController.index);
 
 routes.get('/subscriptions', SubscriberController.index);
 routes.post('/subscriptions', SubscriberController.store);

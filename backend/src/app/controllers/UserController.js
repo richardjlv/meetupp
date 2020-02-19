@@ -1,8 +1,29 @@
 import * as Yup from 'yup';
 
+import File from '../models/File';
+import Meetup from '../models/Meetup';
 import User from '../models/User';
 
 class UserController {
+  async index(req, res) {
+    const meetups = await Meetup.findAll({
+      where: {
+        user_id: req.userId,
+      },
+      order: [['date', 'desc']],
+      attributes: ['id', 'name', 'description', 'date', 'location'],
+      include: [
+        {
+          model: File,
+          as: 'banner',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
+    });
+
+    return res.json(meetups);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
