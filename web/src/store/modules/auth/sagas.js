@@ -14,7 +14,7 @@ export function* signIn({ payload }) {
       password,
     });
 
-    const { token, user } = response.data;
+    const { token, ...user } = response.data;
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
