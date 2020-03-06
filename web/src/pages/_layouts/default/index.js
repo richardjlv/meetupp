@@ -1,7 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Wrapper, Content } from './styles';
+import Header from '~/components/Header';
 
-export default function defaultLayout() {
-  return <div />;
+export default function defaultLayout({ children }) {
+  return (
+    <Wrapper>
+      <Header />
+      <Content>{children}</Content>
+    </Wrapper>
+  );
 }
