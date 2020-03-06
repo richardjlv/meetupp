@@ -22,6 +22,13 @@ export const Content = styled.div`
       margin-bottom: 50px;
     }
 
+    span {
+      color: ${darken(0.05, '#f94d6a')};
+      font-weight: bold;
+      padding: 0 0 15px;
+      opacity: 0.8;
+    }
+
     input {
       background: rgba(0, 0, 0, 0.2);
       border: 0;
