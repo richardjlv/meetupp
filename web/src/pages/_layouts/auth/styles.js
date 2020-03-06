@@ -36,6 +36,7 @@ export const Content = styled.div`
       height: 50px;
       margin-bottom: 15px;
       padding: 0 15px;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     button {
