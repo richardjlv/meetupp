@@ -18,7 +18,7 @@ export const Container = styled.div`
     }
 
     button {
-      padding: 12px 20px;
+      padding: 10px 20px;
       font-weight: bold;
       border: 0;
       border-radius: 4px;
@@ -27,7 +27,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
 
-      a {
+      p {
         margin-left: 10px;
       }
     }
@@ -63,6 +63,17 @@ export const MeetupList = styled.ul`
         color: rgba(255, 255, 255, 0.6);
         margin-right: 30px;
         font-size: 12px;
+      }
+
+      button {
+        margin: 0;
+        padding: 0;
+        background: none;
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
