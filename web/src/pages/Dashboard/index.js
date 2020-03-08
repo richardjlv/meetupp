@@ -1,11 +1,10 @@
-import { format, parseISO } from 'date-fns';
-import pt from 'date-fns/locale/pt-BR';
 import React, { useState, useEffect } from 'react';
 import { MdKeyboardArrowRight, MdAddCircleOutline } from 'react-icons/md';
 
 import { Container, MeetupList } from './styles';
 import api from '~/services/api';
 import history from '~/services/history';
+import { formatDate } from '~/util/format';
 
 export default function Dashboard() {
   const [meetups, setMeetups] = useState([]);
@@ -17,13 +16,7 @@ export default function Dashboard() {
       const data = response.data.map(meetup => {
         return {
           ...meetup,
-          dateFormatted: format(
-            parseISO(meetup.date),
-            "dd 'de' MMMM', às' HH'h' ",
-            {
-              locale: pt,
-            }
-          ),
+          dateFormatted: formatDate(meetup.date),
         };
       });
 
@@ -34,7 +27,7 @@ export default function Dashboard() {
   }, [meetups]);
 
   function handleMeetup(id) {
-    history.push(`/meetups?id=${id}`);
+    history.push(`/meetup/:${id}`);
   }
 
   return (

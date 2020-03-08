@@ -12,7 +12,6 @@ export default function RouteWrapper({
   ...rest
 }) {
   const { signed } = store.getState().auth;
-  console.tron.log(signed);
 
   const Layout = isPrivate ? defaultLayouts : authLayouts;
 
@@ -37,7 +36,8 @@ export default function RouteWrapper({
 }
 
 RouteWrapper.propTypes = {
-  component: PropTypes.oneOfType(PropTypes.element, PropTypes.func).isRequired,
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+    .isRequired,
   isPrivate: PropTypes.bool,
 };
 
