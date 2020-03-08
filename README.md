@@ -2,7 +2,7 @@
 
 Meetupp é um app agregador de eventos para desenvolvedores criada durante o desafio do Bootcamp GoStack 8.0 da Rocketseat.
 
-Somente foi implementado o back-end da aplicação
+Somente foi implementado o back-end da aplicação, front-end ainda está em desenvolvimento
 
 ## Funcionalidades
 
