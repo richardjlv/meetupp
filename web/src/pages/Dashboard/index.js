@@ -27,7 +27,7 @@ export default function Dashboard() {
   }, [meetups]);
 
   function handleMeetup(id) {
-    history.push(`/meetup/:${id}`);
+    history.push(`/meetup/${id}`);
   }
 
   return (
