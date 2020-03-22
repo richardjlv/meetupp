@@ -6,6 +6,27 @@ import User from '../models/User';
 
 class UserController {
   async index(req, res) {
+    const { meetup_id } = req.params;
+    if (meetup_id) {
+      const meetup = await Meetup.findOne({
+        where: {
+          id: meetup_id,
+          user_id: req.userId,
+        },
+        order: [['date', 'desc']],
+        attributes: ['id', 'name', 'description', 'date', 'location'],
+        include: [
+          {
+            model: File,
+            as: 'banner',
+            attributes: ['id', 'path', 'url'],
+          },
+        ],
+      });
+
+      return res.json(meetup);
+    }
+
     const meetups = await Meetup.findAll({
       where: {
         user_id: req.userId,
