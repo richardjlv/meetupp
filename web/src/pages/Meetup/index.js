@@ -12,19 +12,22 @@ import { formatDate } from '~/util/format';
 
 export default function Meetup() {
   const { id } = useParams();
-  const [meetup, setMeetup] = useState({});
   const [editing, setEditing] = useState(false);
+  const [meetup, setMeetup] = useState({});
 
   useEffect(() => {
     async function loadMeetup() {
-      const response = await api.get('/users');
+      try {
+        const response = await api.get(`/users/${id}`);
 
-      const data = response.data.find(m => m.id === Number(id));
-
-      setMeetup({
-        ...data,
-        dateFormatted: formatDate(data.date),
-      });
+        setMeetup({
+          ...response.data,
+          dateFormatted: formatDate(response.data.date),
+        });
+      } catch (err) {
+        toast.error('Meetup não existe ou não é organizado por você');
+        history.push('/dashboard');
+      }
     }
 
     loadMeetup();
