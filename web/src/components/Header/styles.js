@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -30,6 +31,11 @@ export const Content = styled.div`
       border-radius: 4px;
       background: #f94d6a;
       color: #fff;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.05, '#f94d6a')};
+      }
     }
   }
 `;
