@@ -1,11 +1,10 @@
-import { Form, Input } from '@rocketseat/unform';
 import React, { useEffect, useState } from 'react';
 import { MdEdit, MdDeleteForever } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import BannerInput from './BannerInput';
 import { Container, MeetupHeader, Date } from './styles';
+import FormMeetup from '~/components/FormMeetup';
 import api from '~/services/api';
 import history from '~/services/history';
 import { formatDate } from '~/util/format';
@@ -87,26 +86,17 @@ export default function Meetup() {
     );
   }
 
-  function EditMeetup() {
-    return (
-      <>
-        <Form initialData={meetup} onSubmit={handleSubmit}>
-          <Input name="name" placeholder="Nome do Meetup" />
-          <BannerInput name="banner_id" />
-          <Input
-            name="description"
-            type="text"
-            multiline
-            placeholder="Descrição do Meetup"
-          />
-          <Input name="dateFormatted" placeholder="Data do Meetup" />
-          <Input name="location" placeholder="Localização do Meetup" />
-
-          <button type="submit">Atualizar Meetup</button>
-        </Form>
-      </>
-    );
-  }
-
-  return <Container>{editing ? <EditMeetup /> : <MeetupContent />}</Container>;
+  return (
+    <Container>
+      {editing ? (
+        <FormMeetup
+          meetup={meetup}
+          handleSubmit={handleSubmit}
+          action="Atualizar"
+        />
+      ) : (
+          <MeetupContent />
+        )}
+    </Container>
+  );
 }
