@@ -58,7 +58,7 @@ export const FormContainer = styled(Form)`
     transition: background 0.2s;
 
     &:hover {
-      background: ${darken(0.1, '#f94d6a')};
+      background: ${darken(0.05, '#f94d6a')};
     }
   }
 `;
