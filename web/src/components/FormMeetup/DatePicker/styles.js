@@ -2,6 +2,8 @@ import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  width: 100%;
+
   .react-datepicker__month-container,
   .react-datepicker {
     background: ${darken(0.1, '#402845')};

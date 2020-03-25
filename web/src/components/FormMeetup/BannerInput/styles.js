@@ -9,10 +9,23 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.7;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+
+    transition: background 0.2s;
 
     &:hover {
-      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    span {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 5rem 3rem;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     p {
@@ -20,7 +33,6 @@ export const Container = styled.div`
     }
 
     img {
-      background: rgba(0, 0, 0, 0.2);
       padding: 10px 10px;
       border-radius: 4px;
     }

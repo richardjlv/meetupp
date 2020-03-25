@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   margin: 25px 10px;
   padding: 25px 10px;
 
@@ -44,7 +44,7 @@ export const FormContainer = styled(Form)`
   }
 
   > button {
-    background: #4dbaf9;
+    background: #f94d6a;
     color: #fff;
     border: 0;
     border-radius: 4px;
@@ -55,9 +55,10 @@ export const FormContainer = styled(Form)`
     padding: 10px 25px;
     margin-top: 20px;
     font-size: 16px;
+    transition: background 0.2s;
 
     &:hover {
-      background: ${darken(0.05, '#4dbaf9')};
+      background: ${darken(0.1, '#f94d6a')};
     }
   }
 `;

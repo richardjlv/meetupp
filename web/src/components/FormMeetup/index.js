@@ -18,8 +18,8 @@ const schema = Yup.object().shape({
 export default function EditMeetup({ meetup, handleSubmit, action }) {
   return (
     <FormContainer schema={schema} initialData={meetup} onSubmit={handleSubmit}>
-      <Input name="name" placeholder="Nome do Meetup" />
       <BannerInput name="banner_id" />
+      <Input name="name" placeholder="Título do Meetup" />
       <Input
         name="description"
         type="text"

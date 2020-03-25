@@ -1,6 +1,5 @@
 import { useField } from '@rocketseat/unform';
 import React, { useState, useRef, useEffect } from 'react';
-import { MdAddToPhotos } from 'react-icons/md';
 
 import { Container } from './styles';
 import api from '~/services/api';
@@ -41,7 +40,7 @@ export default function BannerInput() {
         {preview ? (
           <img src={preview} alt="" />
         ) : (
-            <MdAddToPhotos size={32} color="eee" />
+            <span>Selecionar imagem</span>
           )}
         <input
           type="file"
