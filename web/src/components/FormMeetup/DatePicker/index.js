@@ -1,16 +1,16 @@
 import { useField } from '@rocketseat/unform';
-import { addHours } from 'date-fns';
-import pt from 'date-fns/locale/pt-BR';
+import pt from 'date-fns/locale/pt';
+import PropTypes from 'prop-types';
 import React, { useRef, useState, useEffect } from 'react';
 import ReactDatePicker from 'react-datepicker';
+
 import 'react-datepicker/dist/react-datepicker.css';
 
-const DatePicker = ({ name, ...rest }) => {
-  const nextDate = addHours(new Date(), 2);
+export default function DatePicker({ name, ...rest }) {
   const datepickerRef = useRef();
-  const { fieldName, registerField, defaultValue, error } = useField(name);
+  const { fieldName, registerField, defaultValue } = useField(name);
   const [date, setDate] = useState(
-    (defaultValue && new Date(defaultValue)) || nextDate
+    (defaultValue && new Date(defaultValue)) || ''
   );
 
   useEffect(() => {
@@ -26,16 +26,20 @@ const DatePicker = ({ name, ...rest }) => {
   }
 
   return (
-    <ReactDatePicker
-      ref={datepickerRef}
-      showTimeSelect
-      locale={pt}
-      dateFormat="d 'de' MMMM, 'às' HH:mm"
-      selected={date}
-      onChange={handleChange}
-      {...rest}
-    />
+      <ReactDatePicker
+        ref={datepickerRef}
+        showTimeInput
+        locale={pt}
+        minDate={new Date()}
+        placeholderText="Selecionar a data"
+        dateFormat="d 'de' MMMM, 'às' HH:mm"
+        selected={date}
+        onChange={handleChange}
+        {...rest}
+      />
   );
-};
+}
 
-export default DatePicker;
+DatePicker.propTypes = {
+  name: PropTypes.string.isRequired,
+};

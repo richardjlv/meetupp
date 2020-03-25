@@ -1,4 +1,4 @@
-import { Form, Input } from '@rocketseat/unform';
+import { Form } from '@rocketseat/unform';
 import { darken } from 'polished';
 import styled from 'styled-components';
 
@@ -43,7 +43,7 @@ export const FormContainer = styled(Form)`
     resize: none;
   }
 
-  button {
+  > button {
     background: #4dbaf9;
     color: #fff;
     border: 0;
@@ -59,27 +59,5 @@ export const FormContainer = styled(Form)`
     &:hover {
       background: ${darken(0.05, '#4dbaf9')};
     }
-  }
-`;
-
-export const Date = styled(Input)`
-  max-width: 300px;
-  width: 100%;
-
-  &::-webkit-datetime-edit-fields-wrapper {
-    padding: 0 0.7rem;
-  }
-
-  &::-webkit-datetime-edit-text {
-    color: #eee;
-    padding: 0 0.3em;
-  }
-
-  &::-webkit-inner-spin-button {
-    display: none;
-  }
-
-  &::-webkit-calendar-picker-indicator {
-    display: none;
   }
 `;
