@@ -43,22 +43,32 @@ export const FormContainer = styled(Form)`
     resize: none;
   }
 
-  > button {
-    background: #f94d6a;
-    color: #fff;
-    border: 0;
-    border-radius: 4px;
-    font-weight: bold;
+  section {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 25px;
-    margin-top: 20px;
-    font-size: 16px;
-    transition: background 0.2s;
+    justify-content: space-between;
 
-    &:hover {
-      background: ${darken(0.05, '#f94d6a')};
+    button {
+      background: #f94d6a;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 25px;
+      margin: 20px;
+      font-size: 16px;
+      transition: background 0.2s;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background: ${darken(0.05, '#f94d6a')};
+      }
     }
   }
 `;

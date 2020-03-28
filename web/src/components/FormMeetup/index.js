@@ -1,6 +1,8 @@
 import { Input } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { MdCancel, MdAddCircleOutline } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import BannerInput from './BannerInput';
@@ -16,6 +18,12 @@ const schema = Yup.object().shape({
 });
 
 export default function EditMeetup({ meetup, handleSubmit, action }) {
+  const history = useHistory();
+
+  function handleCancel() {
+    history.push('/dashboard');
+  }
+
   return (
     <FormContainer schema={schema} initialData={meetup} onSubmit={handleSubmit}>
       <BannerInput name="banner_id" />
@@ -28,7 +36,17 @@ export default function EditMeetup({ meetup, handleSubmit, action }) {
       />
       <DatePicker name="date" />
       <Input name="location" placeholder="Localização do Meetup" />
-      <button type="submit">{action}</button>
+      <section>
+        <button type="submit">
+          <MdAddCircleOutline color="#fff" size={24} />
+
+          {action}
+        </button>
+        <button type="button" onClick={handleCancel}>
+          <MdCancel color="#fff" size={24} />
+          Cancelar
+        </button>
+      </section>
     </FormContainer>
   );
 }
