@@ -1,4 +1,3 @@
-import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -22,21 +21,6 @@ export const Content = styled.div`
   aside {
     display: flex;
     align-items: center;
-
-    button {
-      padding: 12px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      border: 0;
-      border-radius: 4px;
-      background: #f94d6a;
-      color: #fff;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.05, '#f94d6a')};
-      }
-    }
   }
 `;
 

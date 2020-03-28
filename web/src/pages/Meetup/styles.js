@@ -43,32 +43,12 @@ export const MeetupHeader = styled.div`
     button:first-child {
       background: #4dbaf9;
 
-      &:hover {
-        background: ${darken(0.05, '#4dbaf9')};
-      }
-    }
-
-    button {
-      background: #f94d6a;
-      border: 0;
-      border-radius: 4px;
-      font-weight: bold;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 10px 25px;
-      margin-left: 20px;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.05, '#f94d6a')};
+      & + button {
+        margin-left: 20px;
       }
 
-      p {
-        display: block;
-        color: #fff;
-        font-weight: bold;
-        margin-left: 10px;
+      &:hover {
+        background: ${darken(0.07, '#4dbaf9')};
       }
     }
   }

@@ -48,11 +48,11 @@ export default function Meetup() {
         <div>
           <button type="button" onClick={handleEdit}>
             <MdEdit color="#fff" size={24} />
-            <p>Editar</p>
+            Editar
           </button>
           <button type="button" onClick={handleDelete}>
             <MdDeleteForever color="#fff" size={24} />
-            <p>Delete</p>
+            Cancelar
           </button>
         </div>
       </MeetupHeader>

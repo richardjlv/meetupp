@@ -15,9 +15,6 @@ export const Content = styled.div`
   width: 100%;
 
   form {
-    display: flex;
-    flex-direction: column;
-
     img {
       margin-bottom: 50px;
     }
@@ -29,30 +26,9 @@ export const Content = styled.div`
       opacity: 0.8;
     }
 
-    input {
-      background: rgba(0, 0, 0, 0.2);
-      border: 0;
-      border-radius: 4px;
-      height: 50px;
-      margin-bottom: 15px;
-      padding: 0 15px;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
     button {
       font-size: 18px;
-      background: #f94d6a;
-      color: #fff;
-      font-weight: bold;
-      border: 0;
-      border-radius: 4px;
-      padding: 10px 0;
       margin: 5px 0 10px;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.05, '#f94d6a')};
-      }
     }
   }
 
