@@ -33,6 +33,8 @@ export const Container = styled.div`
     }
 
     img {
+      max-width: 100%;
+      height: auto;
       padding: 10px 10px;
       border-radius: 4px;
     }

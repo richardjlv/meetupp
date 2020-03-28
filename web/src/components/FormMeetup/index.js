@@ -39,7 +39,16 @@ EditMeetup.propTypes = {
     description: PropTypes.string,
     date: PropTypes.string,
     location: PropTypes.string,
-  }).isRequired,
+  }),
   handleSubmit: PropTypes.func.isRequired,
   action: PropTypes.string.isRequired,
+};
+
+EditMeetup.defaultProps = {
+  meetup: {
+    name: '',
+    description: '',
+    date: '',
+    location: '',
+  },
 };
