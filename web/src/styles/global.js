@@ -25,7 +25,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button {
+  body, input, textarea, button {
     font: 14px 'Roboto', Helvetica, sans-serif;
   }
 
@@ -67,7 +67,7 @@ export default createGlobalStyle`
     color: rgba(255, 255, 255, 0.7);
 
     &::placeholder {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 

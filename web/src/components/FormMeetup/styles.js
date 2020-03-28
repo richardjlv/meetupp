@@ -31,7 +31,7 @@ export const FormContainer = styled(Form)`
     resize: vertical;
 
     &::placeholder {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 
