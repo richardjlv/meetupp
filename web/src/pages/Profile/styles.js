@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -8,11 +9,17 @@ export const Container = styled.div`
 
   form {
     margin-top: 20px;
-    align-items: flex-end;
+
+    span {
+      color: ${darken(0.05, '#f94d6a')};
+      font-weight: bold;
+      display: block;
+      padding: 0 10px 15px;
+      opacity: 0.8;
+    }
 
     button {
-      width: 182px;
-      margin: 20px 0;
+      margin: 20px auto;
     }
   }
 `;
