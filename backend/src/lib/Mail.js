@@ -4,7 +4,6 @@ import nodemailerhbs from 'nodemailer-express-handlebars';
 import { resolve } from 'path';
 
 import mailConfig from '../config/mail';
-import mail from '../config/mail';
 
 class Mail {
   constructor() {

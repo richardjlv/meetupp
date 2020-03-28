@@ -41,6 +41,7 @@ class MeetupController {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       description: Yup.string().required(),
+      banner_id: Yup.number(),
       date: Yup.date().required(),
       location: Yup.string().required(),
     });
@@ -49,7 +50,7 @@ class MeetupController {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const { name, description, date, location } = req.body;
+    const { name, description, banner_id, date, location } = req.body;
 
     const hourStart = parseISO(date);
 
@@ -62,6 +63,7 @@ class MeetupController {
     const meetup = await Meetup.create({
       name,
       description,
+      banner_id,
       date,
       location,
       user_id: id,
