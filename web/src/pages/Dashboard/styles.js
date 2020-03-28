@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -5,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
   text-align: center;
 
-  div {
+  header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -26,9 +27,14 @@ export const Container = styled.div`
       color: #fff;
       display: flex;
       align-items: center;
+      transition: background 0.2s;
 
       p {
         margin-left: 10px;
+      }
+
+      &:hover {
+        background: ${darken(0.05, '#f94d6a')};
       }
     }
   }
@@ -66,6 +72,7 @@ export const MeetupList = styled.ul`
       }
 
       button {
+        border: 0;
         margin: 0;
         padding: 0;
         background: none;

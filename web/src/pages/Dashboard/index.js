@@ -36,13 +36,13 @@ export default function Dashboard() {
 
   return (
     <Container>
-      <div>
+      <header>
         <strong>Meus meetups</strong>
         <button type="button" onClick={handleNewMeetup}>
           <MdAddCircleOutline color="#fff" size={24} />
           <p>Novo Meetup</p>
         </button>
-      </div>
+      </header>
       <MeetupList>
         {meetups.map(meetup => (
           <li key={meetup.id}>
