@@ -4,22 +4,22 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 900px;
   width: 100%;
-  text-align: left;
+  text-align: center;
 
   img {
-    max-width: 900px;
-    max-height: 300px;
-    width: calc(100% - 20px);
+    height: auto;
+    max-width: calc(100% - 20px);
     padding: 0 10px;
     margin: 0 10px;
   }
 
   > p {
+    display: flex;
     color: #fff;
     font-size: 16px;
     line-height: 20px;
     margin: 10px;
-    padding: 10px;
+    padding: 20px 10px;
     white-space: pre-wrap;
   }
 `;
@@ -77,6 +77,7 @@ export const MeetupHeader = styled.div`
 export const Date = styled.div`
   margin: 10px;
   padding: 10px;
+  display: flex;
 
   span {
     display: inline-block;

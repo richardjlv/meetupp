@@ -76,7 +76,7 @@ export default function Meetup() {
             </button>
           </div>
         </MeetupHeader>
-        <img src={meetup.banner ? meetup.banner.url : ''} alt="evento" />
+        <img src={meetup.banner && meetup.banner.url} alt="evento" />
         <p>{meetup.description}</p>
         <Date>
           <span>{meetup.dateFormatted}</span>
