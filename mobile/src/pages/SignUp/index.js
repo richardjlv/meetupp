@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import {
   Container,
   Form,
+  Logo,
   Input,
   SubmitButton,
   TextSubmitButton,
@@ -36,6 +37,7 @@ export default function SignUp() {
   return (
     <Container>
       <Form>
+        <Logo />
         <Input
           testID="name-input"
           placeholder="Seu Nome"

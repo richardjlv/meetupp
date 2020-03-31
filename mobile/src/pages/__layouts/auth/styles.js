@@ -1,6 +1,8 @@
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 
+import logo from '~/assets/logo.png';
+
 export const Container = styled(LinearGradient).attrs({
   colors: ['#22202C', '#402845'],
 })`
@@ -13,6 +15,15 @@ export const Form = styled.KeyboardAvoidingView`
   width: 80%;
   align-items: center;
   justify-content: center;
+`;
+
+export const Logo = styled.Image.attrs({
+  source: logo,
+  resizeMode: 'cover',
+})`
+  width: 47px;
+  height: 50px;
+  margin-bottom: 40px;
 `;
 
 export const Input = styled.TextInput.attrs({

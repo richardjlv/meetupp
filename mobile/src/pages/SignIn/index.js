@@ -9,6 +9,7 @@ import {
   SubmitButton,
   TextSubmitButton,
   NavigateButton,
+  Logo,
   TextNavigateButton,
 } from '~/pages/__layouts/auth/styles';
 import { signInRequest } from '~/store/modules/auth/actions';
@@ -34,6 +35,7 @@ export default function SignIn() {
   return (
     <Container>
       <Form>
+        <Logo />
         <Input
           testID="email-input"
           keyboardType="email-address"
