@@ -5,7 +5,7 @@ export default (reducers) => {
   const persistedReducer = persistReducer(
     {
       key: 'Meetupp',
-      AsyncStorage,
+      storage: AsyncStorage,
       whitelist: ['auth'],
     },
     reducers
