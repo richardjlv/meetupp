@@ -22,7 +22,7 @@ export default function SignIn() {
   const dispatch = useDispatch();
 
   function handleSubmit() {
-    dispatch(signInRequest);
+    dispatch(signInRequest(email, password));
 
     setEmail('');
     setPassword('');
@@ -48,7 +48,7 @@ export default function SignIn() {
           value={password}
           secureTextEntry
           placeholder="Sua Senha"
-          onChangeText={setEmail}
+          onChangeText={setPassword}
         />
         <SubmitButton onPress={handleSubmit}>
           <TextSubmitButton>Entrar</TextSubmitButton>

@@ -23,7 +23,7 @@ export default function SignUp() {
   const dispatch = useDispatch();
 
   function handleSubmit() {
-    dispatch(signUpRequest);
+    dispatch(signUpRequest(name, email, password));
 
     setName('');
     setEmail('');
@@ -56,7 +56,7 @@ export default function SignUp() {
           value={password}
           secureTextEntry
           placeholder="Sua Senha"
-          onChangeText={setEmail}
+          onChangeText={setPassword}
         />
         <SubmitButton onPress={handleSubmit}>
           <TextSubmitButton>Criar Conta</TextSubmitButton>

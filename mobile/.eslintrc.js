@@ -54,6 +54,7 @@ module.exports = {
     "react/state-in-constructor": ['off', 'always'],
     "react/static-property-placement": 'off',
     "no-console": ["error", { allow: ["tron"] }],
+    "no-param-reassign": 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     "jest/no-disabled-tests": "warn",

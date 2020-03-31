@@ -5,15 +5,16 @@ import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import '~/config/reactotronConfig';
 import Routes from './routes';
+import navigationRef from '~/service/rootNavigation';
+import '~/config/reactotronConfig';
 import { store, persistor } from '~/store';
 
 export default function App() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <StatusBar barStyle="light-content" backgroundColor="#191920" />
           <Routes />
         </NavigationContainer>

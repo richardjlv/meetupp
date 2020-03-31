@@ -23,11 +23,14 @@ describe('SignIn page', () => {
 
     useDispatch.mockReturnValue(dispatch);
 
-    fireEvent.changeText(getByTestId('email-input'), 'example@example.com');
-    fireEvent.changeText(getByTestId('password-input'), '123456');
+    const password = '123456';
+    const email = 'example@example.com';
+
+    fireEvent.changeText(getByTestId('email-input'), email);
+    fireEvent.changeText(getByTestId('password-input'), password);
     fireEvent.press(getByText('Entrar'));
 
-    expect(dispatch).toHaveBeenCalledWith(signInRequest);
+    expect(dispatch).toHaveBeenCalledWith(signInRequest(email, password));
     expect(getByTestId('email-input')).toHaveProp('value', '');
     expect(getByTestId('password-input')).toHaveProp('value', '');
   });

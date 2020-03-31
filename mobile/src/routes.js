@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 
 import Dashboard from '~/pages/Dashboard';
 import SignIn from '~/pages/SignIn';
@@ -10,7 +11,7 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default function Routes() {
-  const signed = false;
+  const { signed } = useSelector((state) => state.auth);
 
   function App() {
     return (
