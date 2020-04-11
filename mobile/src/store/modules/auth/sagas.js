@@ -2,8 +2,8 @@ import { Alert } from 'react-native';
 import { takeLatest, all, call, put } from 'redux-saga/effects';
 
 import { signInSuccess, signFailure, signUpSuccess } from './actions';
-import api from '~/service/api';
-import navigate from '~/service/rootNavigation';
+import api from '~/services/api';
+import navigate from '~/services/rootNavigation';
 
 export function* signIn({ payload }) {
   try {
@@ -40,6 +40,7 @@ export function* signUp({ payload }) {
     yield put(signUpSuccess());
     navigate('SignIn');
   } catch (err) {
+    Alert.alert('Erro no cadastro, verifique seus dados');
     yield put(signFailure());
   }
 }

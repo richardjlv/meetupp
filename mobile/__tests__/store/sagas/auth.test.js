@@ -1,8 +1,8 @@
 import MockAdapter from 'axios-mock-adapter';
 import { runSaga } from 'redux-saga';
 
-import api from '~/service/api';
-import navigate from '~/service/rootNavigation';
+import api from '~/services/api';
+import navigate from '~/services/rootNavigation';
 import * as authAction from '~/store/modules/auth/actions';
 import * as authSaga from '~/store/modules/auth/sagas';
 
