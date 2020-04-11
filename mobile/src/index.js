@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Routes from './routes';
-import navigationRef from '~/service/rootNavigation';
+import navigationRef from '~/services/rootNavigation';
 import '~/config/reactotronConfig';
 import { store, persistor } from '~/store';
 
