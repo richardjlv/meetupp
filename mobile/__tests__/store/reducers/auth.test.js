@@ -13,7 +13,7 @@ describe('Auth reducer', () => {
 
   it('SIGN_IN_SUCCESS', () => {
     const token = '1234567890';
-    const user = 'user';
+    const user = { id: 1, name: 'Smith' };
 
     const state = reducer(INITIAL_STATE, auth.signInSuccess(token, user));
 

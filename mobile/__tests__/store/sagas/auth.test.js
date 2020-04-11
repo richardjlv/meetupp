@@ -13,7 +13,7 @@ const name = 'Smith';
 const email = 'example@example.com';
 const password = '123456';
 
-jest.mock('~/service/rootNavigation', () => {
+jest.mock('~/services/rootNavigation', () => {
   return jest.fn().mockReturnValue(jest.fn());
 });
 
