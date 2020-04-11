@@ -22,15 +22,17 @@ export default function Routes() {
   }
 
   return (
-    <Stack.Navigator initialRouteName="SignIn" headerMode="none">
+    <>
       {signed ? (
-        <Stack.Screen name="App" component={App} />
+        <Tab.Navigator initialRouteName="Dashboard">
+          <Tab.Screen name="Dashboard" component={Dashboard} />
+        </Tab.Navigator>
       ) : (
-          <>
+          <Stack.Navigator initialRouteName="SignIn" headerMode="none">
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="SignUp" component={SignUp} />
-          </>
+          </Stack.Navigator>
         )}
-    </Stack.Navigator>
+    </>
   );
 }

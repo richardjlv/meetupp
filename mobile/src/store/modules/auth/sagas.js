@@ -3,7 +3,7 @@ import { takeLatest, all, call, put } from 'redux-saga/effects';
 
 import { signInSuccess, signFailure, signUpSuccess } from './actions';
 import api from '~/services/api';
-import navigate from '~/services/rootNavigation';
+import { navigate } from '~/services/rootNavigation';
 
 export function* signIn({ payload }) {
   try {
@@ -19,10 +19,11 @@ export function* signIn({ payload }) {
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token, user));
-
-    navigate('App');
   } catch (err) {
-    Alert.alert('Erro no login, verifique seus dados');
+    Alert.alert(
+      'Erro!',
+      'Parece que ocorreu um erro durante o login, verifique seus dados e tente novamente'
+    );
     yield put(signFailure());
   }
 }
@@ -38,9 +39,13 @@ export function* signUp({ payload }) {
     });
 
     yield put(signUpSuccess());
+
     navigate('SignIn');
   } catch (err) {
-    Alert.alert('Erro no cadastro, verifique seus dados');
+    Alert.alert(
+      'Erro!',
+      'Parece que ocorreu um erro durante o cadastro, verifique seus dados e tente novamente'
+    );
     yield put(signFailure());
   }
 }
