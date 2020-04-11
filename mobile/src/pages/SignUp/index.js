@@ -42,11 +42,14 @@ export default function SignUp() {
           testID="name-input"
           placeholder="Seu Nome"
           value={name}
+          autoCorrect={false}
           onChangeText={setName}
         />
         <Input
           testID="email-input"
           keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
           value={email}
           onChangeText={setEmail}
           placeholder="Seu E-mail"
@@ -54,6 +57,7 @@ export default function SignUp() {
         <Input
           testID="password-input"
           value={password}
+          autoCapitalize="none"
           secureTextEntry
           placeholder="Sua Senha"
           onChangeText={setPassword}

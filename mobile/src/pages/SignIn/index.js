@@ -40,12 +40,15 @@ export default function SignIn() {
           testID="email-input"
           keyboardType="email-address"
           value={email}
+          autoCorrect={false}
+          autoCapitalize="none"
           onChangeText={setEmail}
           placeholder="Seu E-mail"
         />
         <Input
           testID="password-input"
           value={password}
+          autoCapitalize="none"
           secureTextEntry
           placeholder="Sua Senha"
           onChangeText={setPassword}
